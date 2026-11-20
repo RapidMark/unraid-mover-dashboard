@@ -1,0 +1,85 @@
+Menu="Mover:1"
+Title="Mover"
+Tag="truck"
+Markdown="false"
+---
+<?
+// Unraid's black and gray themes are dark, white and azure light.
+$mmTheme = in_array($display['theme'] ?? 'white', ['black', 'gray']) ? 'dark' : 'light';
+?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link type="text/css" rel="stylesheet" href="<?autov('/plugins/mover.monitor/mover-monitor.css')?>">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mm-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 6h11v9H2z"/><path d="M13 9h4l3 3v3h-7z"/><circle cx="6" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/>
+  </symbol>
+</svg>
+
+<div id="mm" class="mm-<?=$mmTheme?>">
+
+  <header class="mm-strip">
+    <div class="mm-title"><svg><use href="#mm-truck"/></svg>Mover</div>
+    <span id="mm-state" class="mm-chip mm-plain">…</span>
+    <span id="mm-turbo" class="mm-chip mm-plain" hidden></span>
+    <span id="mm-since" class="mm-muted"></span>
+    <div class="mm-facts">
+      <div class="mm-fact"><b id="mm-f-wait">—</b><span id="mm-f-wait-s">waiting on cache</span></div>
+      <div class="mm-fact"><b id="mm-f-eta">—</b><span id="mm-f-eta-s">to empty</span></div>
+      <div class="mm-fact"><b id="mm-f-mem">—</b><span>written, still in memory</span></div>
+    </div>
+  </header>
+  <div id="mm-note" class="mm-note" hidden></div>
+
+  <section class="mm-panel mm-route">
+    <div class="mm-route-head">
+      <div class="mm-min">
+        <div class="mm-label" id="mm-r-label">Moving now</div>
+        <div class="mm-film" id="mm-r-film">—</div>
+        <div class="mm-path" id="mm-r-path"></div>
+      </div>
+      <div class="mm-pct" id="mm-r-pct"></div>
+    </div>
+    <div class="mm-lane">
+      <span class="mm-stop" id="mm-r-from">cache</span>
+      <div class="mm-road"><div class="mm-rail"></div><div class="mm-done" id="mm-r-done"></div><div class="mm-truck" id="mm-r-truck"><svg><use href="#mm-truck"/></svg></div></div>
+      <span class="mm-stop mm-to" id="mm-r-to">—</span>
+    </div>
+    <div class="mm-route-stats" id="mm-r-stats"></div>
+    <div>
+      <canvas id="mm-chart"></canvas>
+      <div class="mm-chart-cap"><span>15 min ago</span><span>array write speed · dashes mark a new file</span><span>now</span></div>
+    </div>
+  </section>
+
+  <div class="mm-main">
+    <section class="mm-panel">
+      <h2>Drive cage <span class="mm-muted" id="mm-cage-note"></span></h2>
+      <div class="mm-cage" id="mm-cage"></div>
+      <div class="mm-cage-key">
+        <span><i class="mm-sw mm-sw-r"></i>read</span>
+        <span><i class="mm-sw mm-sw-w"></i>write · bars scaled to 250 MB/s for disks, 2 GB/s for SSD/NVMe</span>
+      </div>
+    </section>
+
+    <div class="mm-side">
+      <section class="mm-panel">
+        <h2>Next up <span class="mm-muted" id="mm-q-note"></span></h2>
+        <div class="mm-queue" id="mm-queue"></div>
+        <div class="mm-foot" id="mm-q-foot"></div>
+      </section>
+
+      <section class="mm-panel">
+        <h2>Waiting on cache</h2>
+        <div id="mm-waiting"></div>
+        <div class="mm-mem">
+          <div class="mm-row"><span>Written, still in memory</span><span class="mm-num" id="mm-mem-v"></span></div>
+          <div class="mm-meter"><i id="mm-mem-bar"></i><em id="mm-mem-mark"></em></div>
+          <div class="mm-row"><span id="mm-mem-start"></span><span id="mm-mem-hold"></span></div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script src="<?autov('/plugins/mover.monitor/mover-monitor.js')?>"></script>

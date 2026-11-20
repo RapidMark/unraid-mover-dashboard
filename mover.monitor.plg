@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "mover.monitor">
+<!ENTITY author    "RapidMark">
+<!ENTITY version   "2026.11.20">
+<!ENTITY md5       "6e5c64ea98f4c7be91eedb837ef2398a">
+<!ENTITY github    "RapidMark/unraid-mover-monitor">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
+<!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
+<!ENTITY flash     "/boot/config/plugins/&name;">
+<!ENTITY plugdir   "/usr/local/emhttp/plugins/&name;">
+]>
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" launch="Mover" icon="truck" min="7.0.0" support="https://github.com/&github;/issues">
+
+<CHANGES>
+###2026.11.20
+- First release: a Mover tab with the file being moved and its progress, the mover's queue, what is waiting on each cache pool, read and write per drive with the apps using them, and array write speed over 15 minutes.
+</CHANGES>
+
+<!-- Old versions left on the flash drive. -->
+<FILE Run="/bin/bash">
+<INLINE>
+find "&flash;" -maxdepth 1 -name '&name;-*.txz' ! -name '&name;-&version;.txz' -delete 2>/dev/null
+</INLINE>
+</FILE>
+
+<FILE Name="&flash;/&name;-&version;.txz" Run="upgradepkg --install-new">
+<URL>&packageURL;</URL>
+<MD5>&md5;</MD5>
+</FILE>
+
+<FILE Run="/bin/bash">
+<INLINE>
+echo "&name; &version; installed. Open the Mover tab."
+</INLINE>
+</FILE>
+
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+removepkg "&name;-&version;" 2>/dev/null
+rm -rf "&plugdir;" "&flash;" /tmp/&name;
+echo "&name; removed."
+</INLINE>
+</FILE>
+
+</PLUGIN>
