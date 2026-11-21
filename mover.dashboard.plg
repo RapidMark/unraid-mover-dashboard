@@ -20,7 +20,9 @@
 <!-- Old versions left on the flash drive. -->
 <FILE Run="/bin/bash">
 <INLINE>
+mkdir -p "&flash;"
 find "&flash;" -maxdepth 1 -name '&name;-*.txz' ! -name '&name;-&version;.txz' -delete 2>/dev/null
+true
 </INLINE>
 </FILE>
 
