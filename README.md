@@ -11,7 +11,7 @@ A **Mover** tab that shows what the mover is doing while it runs:
 
 It only reads: the mover's pid and progress files, the file lists the mover writes for each share, the files the user-share layer (`shfs`) has open, `/proc/diskstats` and `/proc/meminfo`. It does not start, stop or change the mover.
 
-Requires Unraid 7.0 or later. Turn on **Settings → Mover Settings → Mover progress** for exact totals and ETA.
+Requires Unraid 7.0 or later. MIT licensed. Turn on **Settings → Mover Settings → Mover progress** for exact totals and ETA.
 
 ## Install
 
