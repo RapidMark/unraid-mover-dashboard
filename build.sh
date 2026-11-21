@@ -1,10 +1,10 @@
 #!/bin/bash
-# Build packages/mover.monitor-VERSION.txz from src/ and stamp its version and
-# md5 into mover.monitor.plg. Usage: ./build.sh [version]   (default: today)
+# Build packages/mover.dashboard-VERSION.txz from src/ and stamp its version and
+# md5 into mover.dashboard.plg. Usage: ./build.sh [version]   (default: today)
 set -euo pipefail
 cd "$(dirname "$0")"
 
-name=mover.monitor
+name=mover.dashboard
 version=${1:-$(date +%Y.%m.%d)}
 pkg="packages/$name-$version.txz"
 

@@ -8,7 +8,7 @@ Markdown="false"
 $mmTheme = in_array($display['theme'] ?? 'white', ['black', 'gray']) ? 'dark' : 'light';
 ?>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-<link type="text/css" rel="stylesheet" href="<?autov('/plugins/mover.monitor/mover-monitor.css')?>">
+<link type="text/css" rel="stylesheet" href="<?autov('/plugins/mover.dashboard/mover-dashboard.css')?>">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mm-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -82,4 +82,4 @@ $mmTheme = in_array($display['theme'] ?? 'white', ['black', 'gray']) ? 'dark' : 
   </div>
 </div>
 
-<script src="<?autov('/plugins/mover.monitor/mover-monitor.js')?>"></script>
+<script src="<?autov('/plugins/mover.dashboard/mover-dashboard.js')?>"></script>

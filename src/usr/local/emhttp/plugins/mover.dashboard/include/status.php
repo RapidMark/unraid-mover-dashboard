@@ -1,5 +1,5 @@
 <?php
-/* Mover Monitor: one JSON snapshot of what the mover is doing.
+/* Mover Dashboard: one JSON snapshot of what the mover is doing.
  *
  * Read-only. Sources: the mover's pid file and progress file
  * (/usr/local/emhttp/state/mover.ini, written when "Mover progress" is on),
@@ -11,7 +11,7 @@
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
 
-const STATE_DIR = '/tmp/mover.monitor';
+const STATE_DIR = '/tmp/mover.dashboard';
 const HISTORY_SECONDS = 900;
 const QUEUE_SHOWN = 15;
 const WAITING_TTL = 60;

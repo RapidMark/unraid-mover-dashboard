@@ -1,4 +1,4 @@
-# Mover Monitor for Unraid
+# Mover Dashboard for Unraid
 
 A **Mover** tab that shows what the mover is doing while it runs:
 
@@ -18,7 +18,7 @@ Requires Unraid 7.0 or later. Turn on **Settings → Mover Settings → Mover pr
 Plugins → Install Plugin, then paste:
 
 ```
-https://raw.githubusercontent.com/RapidMark/unraid-mover-monitor/main/mover.monitor.plg
+https://raw.githubusercontent.com/RapidMark/unraid-mover-dashboard/main/mover.dashboard.plg
 ```
 
 ## How progress is measured
@@ -31,4 +31,4 @@ The mover's copy reserves the full file size up front and writes by offset, so n
 ./build.sh 2026.11.20
 ```
 
-Builds `packages/mover.monitor-<version>.txz` from `src/` and writes its version and md5 into `mover.monitor.plg`. Attach the package to a GitHub release tagged with the same version.
+Builds `packages/mover.dashboard-<version>.txz` from `src/` and writes its version and md5 into `mover.dashboard.plg`. Attach the package to a GitHub release tagged with the same version.

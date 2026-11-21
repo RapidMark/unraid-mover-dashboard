@@ -1,4 +1,4 @@
-/* Mover Monitor. Freight board: status strip, the copy as a route from pool to
+/* Mover Dashboard. Freight board: status strip, the copy as a route from pool to
    drive, then the drive cage beside the queue. Colors follow Unraid's theme. */
 #mm {
   --mm-bg: #f6f4f1; --mm-panel: #ffffff; --mm-ink: #1d1b19; --mm-muted: #6f6a64;

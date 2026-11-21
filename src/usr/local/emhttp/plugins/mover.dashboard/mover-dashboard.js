@@ -1,5 +1,5 @@
 (function () {
-  const URL = '/plugins/mover.monitor/include/status.php';
+  const URL = '/plugins/mover.dashboard/include/status.php';
   const POLL_MS = 2000;
   // Full scale of a drive's read and write strips.
   const HDD_MAX = 250e6, SSD_MAX = 2000e6;

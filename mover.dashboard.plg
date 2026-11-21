@@ -1,10 +1,10 @@
 <?xml version="1.0" standalone="yes"?>
 <!DOCTYPE PLUGIN [
-<!ENTITY name      "mover.monitor">
+<!ENTITY name      "mover.dashboard">
 <!ENTITY author    "RapidMark">
-<!ENTITY version   "2026.11.20">
-<!ENTITY md5       "6e5c64ea98f4c7be91eedb837ef2398a">
-<!ENTITY github    "RapidMark/unraid-mover-monitor">
+<!ENTITY version   "2026.11.21">
+<!ENTITY md5       "24a4cb8995ae00534d0251fa0497d618">
+<!ENTITY github    "RapidMark/unraid-mover-dashboard">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
 <!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
 <!ENTITY flash     "/boot/config/plugins/&name;">
