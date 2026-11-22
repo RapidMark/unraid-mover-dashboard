@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CommunityApplications>
   <Profile>Mover Dashboard, an Unraid plugin by RapidMark. It adds a Mover tab that shows what the mover is doing while it runs: the file being moved with its progress, the next files in the mover's own order, what is waiting on each cache pool, and read and write activity per drive with the apps that have files open. Support is through the GitHub issues of this repository.</Profile>
-  <Icon>https://raw.githubusercontent.com/RapidMark/unraid-mover-dashboard/main/ca/mover-dashboard.png</Icon>
+  <Icon>https://raw.githubusercontent.com/RapidMark/unraid-mover-dashboard/main/icon.png</Icon>
   <WebPage>https://github.com/RapidMark/unraid-mover-dashboard</WebPage>
 </CommunityApplications>
