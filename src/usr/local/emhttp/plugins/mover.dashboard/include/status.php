@@ -11,12 +11,12 @@
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
 
-const STATE_DIR = '/tmp/mover.dashboard';
+const STATE_DIR = '/var/run/mover.dashboard';
 const HISTORY_SECONDS = 900;
 const QUEUE_SHOWN = 15;
 const WAITING_TTL = 60;
 
-@mkdir(STATE_DIR, 0755, true);
+@mkdir(STATE_DIR, 0700, true);
 $now = microtime(true);
 
 function read_json($file, $default) {
