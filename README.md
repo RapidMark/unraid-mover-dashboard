@@ -11,7 +11,7 @@ A **Mover** tab that shows what the mover is doing while it runs:
 - data written but still in memory, against the kernel's write-back limits
 - array write speed over the last 15 minutes, with a mark at each new file
 
-It only reads: the mover's pid and progress files, the file lists the mover writes for each share, the files the user-share layer (`shfs`) has open, `/proc/diskstats` and `/proc/meminfo`. It does not start, stop or change the mover.
+It only reads: the mover's pid and progress files, the file lists the mover writes for each share, the files the user-share layer (`shfs`) has open, `/proc/diskstats` and `/proc/meminfo`. It does not start, stop or change the mover. Its only writes are a few small state files in `/var/run/mover.dashboard` (in RAM, root only, cleared at boot).
 
 Requires Unraid 7.0 or later. MIT licensed. Turn on **Settings → Mover Settings → Mover progress** for exact totals and ETA.
 
@@ -30,7 +30,9 @@ The mover's copy reserves the full file size up front and writes by offset, so n
 ## Build
 
 ```
-./build.sh 2026.11.20
+./build.sh [version]    # default: today's date, e.g. 2026.11.24
 ```
 
-Builds `packages/mover.dashboard-<version>.txz` from `src/` and writes its version and md5 into `mover.dashboard.plg`. Attach the package to a GitHub release tagged with the same version.
+Builds `packages/mover.dashboard-<version>.txz` from `src/` and writes its version, MD5 and SHA256 into `mover.dashboard.plg`. Unraid checks the downloaded package against both.
+
+To release, create a GitHub release tagged with the same version and attach the package, then push `mover.dashboard.plg`. In that order, the `.plg` never points at a package that isn't published yet.
