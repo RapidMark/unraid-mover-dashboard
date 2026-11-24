@@ -43,7 +43,7 @@ echo "&name; &version; installed. Open the Mover tab."
 <FILE Run="/bin/bash" Method="remove">
 <INLINE>
 removepkg "&name;-&version;" 2>/dev/null
-rm -rf "&plugdir;" "&flash;" /tmp/&name;
+rm -rf "&plugdir;" "&flash;" /var/run/&name; /tmp/&name;
 echo "&name; removed."
 </INLINE>
 </FILE>
