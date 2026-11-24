@@ -2,9 +2,9 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mover.dashboard">
 <!ENTITY author    "RapidMark">
-<!ENTITY version   "2026.11.23">
-<!ENTITY md5       "afc4f6e4f565b7633f0a5d0d797f8c52">
-<!ENTITY sha256    "">
+<!ENTITY version   "2026.11.24">
+<!ENTITY md5       "a2fc76ab3cd711f94024b64735de6f8c">
+<!ENTITY sha256    "ac3fb9c23ded886c545f893de46765d2c7f54a15d560356f3aec680d60b4b1fd">
 <!ENTITY github    "RapidMark/unraid-mover-dashboard">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
 <!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
@@ -14,6 +14,11 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" launch="Mover" icon="truck" min="7.0.0" support="https://github.com/&github;/issues">
 
 <CHANGES>
+###2026.11.24
+- Keeps its state in /var/run instead of /tmp (suggested by the Community Applications review).
+- The package is also checked by SHA256.
+- No fonts are loaded from Google; the page uses local fonts.
+
 ###2026.11.23
 - The Plugins page shows the name Mover Dashboard instead of mover.dashboard.
 
@@ -38,6 +43,8 @@ true
 
 <FILE Run="/bin/bash">
 <INLINE>
+# State moved to /var/run in 2026.11.24.
+rm -rf /tmp/&name;
 echo "&name; &version; installed. Open the Mover tab."
 </INLINE>
 </FILE>
