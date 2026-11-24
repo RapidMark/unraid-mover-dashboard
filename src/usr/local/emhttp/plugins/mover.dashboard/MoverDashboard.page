@@ -7,7 +7,6 @@ Markdown="false"
 // Unraid's black and gray themes are dark, white and azure light.
 $mmTheme = in_array($display['theme'] ?? 'white', ['black', 'gray']) ? 'dark' : 'light';
 ?>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link type="text/css" rel="stylesheet" href="<?autov('/plugins/mover.dashboard/mover-dashboard.css')?>">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">

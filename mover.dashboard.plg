@@ -4,6 +4,7 @@
 <!ENTITY author    "RapidMark">
 <!ENTITY version   "2026.11.23">
 <!ENTITY md5       "afc4f6e4f565b7633f0a5d0d797f8c52">
+<!ENTITY sha256    "">
 <!ENTITY github    "RapidMark/unraid-mover-dashboard">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
 <!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
@@ -32,6 +33,7 @@ true
 <FILE Name="&flash;/&name;-&version;.txz" Run="upgradepkg --install-new">
 <URL>&packageURL;</URL>
 <MD5>&md5;</MD5>
+<SHA256>&sha256;</SHA256>
 </FILE>
 
 <FILE Run="/bin/bash">

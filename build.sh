@@ -17,6 +17,8 @@ find "$stage" -type f -exec chmod 644 {} +
 (cd "$stage" && makepkg -l y -c y "$OLDPWD/$pkg" >/dev/null)
 
 md5=$(md5sum "$pkg" | cut -d' ' -f1)
+sha256=$(sha256sum "$pkg" | cut -d' ' -f1)
 sed -i -e "s|<!ENTITY version   \"[^\"]*\">|<!ENTITY version   \"$version\">|" \
-       -e "s|<!ENTITY md5       \"[^\"]*\">|<!ENTITY md5       \"$md5\">|" "$name.plg"
-echo "$pkg $md5"
+       -e "s|<!ENTITY md5       \"[^\"]*\">|<!ENTITY md5       \"$md5\">|" \
+       -e "s|<!ENTITY sha256    \"[^\"]*\">|<!ENTITY sha256    \"$sha256\">|" "$name.plg"
+echo "$pkg $md5 $sha256"
