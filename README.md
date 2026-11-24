@@ -1,6 +1,6 @@
 # Mover Dashboard for Unraid
 
-![The Mover tab while the mover copies a film to disk2](screenshot.png)
+![The Mover tab while the mover copies a film to disk2](screenshot-demo.png)
 
 A **Mover** tab that shows what the mover is doing while it runs:
 
