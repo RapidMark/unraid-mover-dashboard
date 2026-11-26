@@ -2,9 +2,9 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mover.dashboard">
 <!ENTITY author    "RapidMark">
-<!ENTITY version   "2026.11.26">
-<!ENTITY md5       "e2d230303213a031a0377031100c7c06">
-<!ENTITY sha256    "d843ee585971514df65fd6f962a120754b106fbdda7c654a1ce928c51e85f3d4">
+<!ENTITY version   "2026.11.26a">
+<!ENTITY md5       "6460fd038ea8a620c1508442e2ea7197">
+<!ENTITY sha256    "6692a01f7be2f3887683ef225e525820d18725c2b00a43f003328132d45f25b3">
 <!ENTITY github    "RapidMark/unraid-mover-dashboard">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
 <!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
@@ -14,6 +14,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" launch="Mover" icon="truck" min="7.0.0" support="https://github.com/&github;/issues">
 
 <CHANGES>
+###2026.11.26a
+- A small sidecar file that goes with the file being moved is listed by its own name, not under the moving file's title, so its size isn't mistaken for the moving file's.
+
 ###2026.11.26
 - A very long file name no longer pushes the percentage and target drive out of the Moving now panel; the name is shortened with an ellipsis.
 

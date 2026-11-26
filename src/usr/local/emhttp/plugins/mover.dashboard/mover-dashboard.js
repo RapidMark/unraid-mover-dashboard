@@ -138,7 +138,7 @@
     const max = Math.max(1, ...items.map((i) => i.size));
     $('mm-queue').innerHTML = items.length
       ? items.map((i) => i.sidecarOfCurrent
-        ? `<div class="mm-q"><span class="mm-qt mm-muted">${esc(title(d.current.rel))}<span class="mm-tag">sidecar</span></span><span class="mm-qs">${size(i.size)}</span></div>`
+        ? `<div class="mm-q"><span class="mm-qt mm-muted" title="${esc(i.rel)}"><span class="mm-tag mm-tag-lead">sidecar</span>${esc(i.rel.slice(d.current.rel.length))} · goes with the file being moved</span><span class="mm-qs">${size(i.size)}</span></div>`
         : `<div class="mm-q"><span class="mm-qt" title="${esc(i.rel)}">${esc(title(i.rel))}${i.extra ? `<span class="mm-tag">+ ${i.extra} small</span>` : ''}</span>` +
           `<span class="mm-qs">${size(i.size)}</span><div class="mm-qbar"><i style="width:${(i.size / max * 100).toFixed(1)}%"></i></div></div>`).join('')
       : `<div class="mm-foot">${d.running ? 'Nothing after this file in this share' : 'The mover is idle. This fills in when it runs.'}</div>`;
