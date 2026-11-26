@@ -7,7 +7,7 @@
   --mm-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
   --mm-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
   color: var(--mm-ink);
-  display: grid; gap: 14px; max-width: 1400px; margin-inline: auto; padding-block: 6px 24px;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; max-width: 1400px; margin-inline: auto; padding-block: 6px 24px;
   font-size: 14px; line-height: 1.45;
 }
 #mm.mm-dark {
@@ -40,7 +40,7 @@
 @keyframes mm-pulse { 50% { opacity: .35; } }
 
 /* route */
-#mm .mm-route { display: grid; gap: 14px; }
+#mm .mm-route { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
 #mm .mm-route-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
 #mm .mm-film { font: 700 28px/1.1 var(--mm-display); letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 #mm .mm-path { font: 12px var(--mm-mono); color: var(--mm-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

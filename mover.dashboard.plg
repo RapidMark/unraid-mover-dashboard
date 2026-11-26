@@ -2,9 +2,9 @@
 <!DOCTYPE PLUGIN [
 <!ENTITY name      "mover.dashboard">
 <!ENTITY author    "RapidMark">
-<!ENTITY version   "2026.11.24">
-<!ENTITY md5       "a2fc76ab3cd711f94024b64735de6f8c">
-<!ENTITY sha256    "ac3fb9c23ded886c545f893de46765d2c7f54a15d560356f3aec680d60b4b1fd">
+<!ENTITY version   "2026.11.26">
+<!ENTITY md5       "e2d230303213a031a0377031100c7c06">
+<!ENTITY sha256    "d843ee585971514df65fd6f962a120754b106fbdda7c654a1ce928c51e85f3d4">
 <!ENTITY github    "RapidMark/unraid-mover-dashboard">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/&github;/main/&name;.plg">
 <!ENTITY packageURL "https://github.com/&github;/releases/download/&version;/&name;-&version;.txz">
@@ -14,6 +14,9 @@
 <PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" launch="Mover" icon="truck" min="7.0.0" support="https://github.com/&github;/issues">
 
 <CHANGES>
+###2026.11.26
+- A very long file name no longer pushes the percentage and target drive out of the Moving now panel; the name is shortened with an ellipsis.
+
 ###2026.11.24
 - Keeps its state in /var/run instead of /tmp (suggested by the Community Applications review).
 - The package is also checked by SHA256.
